@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Shivangi Maurya | Aspiring DevOps Engineer & CSE Developer</title>
+  <meta name="description" content="Portfolio of Shivangi Maurya - DevOps Engineer Intern, Final Year B.Tech CSE Student at MGIMT Lucknow (AKTU). Expertise in Docker, Kubernetes, AWS, Java, Spring Boot, Python, Flask, MySQL, SQLite, Power BI, and CI/CD pipelines.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Background Canvas Animation -->
+  <canvas id="particleCanvas"></canvas>
+
+  <!-- Navigation Bar -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="logo">
+        <span class="logo-icon"><i class="fa-solid fa-code"></i></span>
+        <span class="logo-text">Shivangi <span class="highlight">Maurya</span></span>
+      </a>
+
+      <nav class="nav-menu" id="navMenu">
+        <a href="#hero" class="nav-link active">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#experience" class="nav-link">Journey</a>
+        <a href="#certificates" class="nav-link">Certifications</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="Shivangi_Maurya_Resume.pdf" download="Shivangi_Maurya_Resume.pdf" class="btn btn-primary btn-sm nav-resume-btn">
+          <i class="fa-solid fa-download"></i> Resume
+        </a>
+
+        <!-- 3-Dots Dropdown Trigger -->
+        <div class="three-dots-wrapper">
+          <button class="three-dots-btn" id="threeDotsBtn" title="Quick Options" aria-label="More Options">
+            <i class="fa-solid fa-ellipsis-vertical"></i>
+          </button>
+          <div class="three-dots-menu" id="threeDotsMenu">
+            <div class="menu-header">Quick Utilities</div>
+            <a href="javascript:void(0)" onclick="openResumeModal()"><i class="fa-solid fa-file-pdf"></i> View Resume Modal</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('certificates')"><i class="fa-solid fa-certificate"></i> Certifications Gallery</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('education')"><i class="fa-solid fa-graduation-cap"></i> Academic Status (2027)</a>
+            <div class="menu-divider"></div>
+            <a href="https://github.com/mauryashivi199-ui" target="_blank"><i class="fa-brands fa-github"></i> GitHub Profile</a>
+            <a href="https://linkedin.com/in/shivangi-27s" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn Profile</a>
+            <a href="mailto:mauryashivi199@gmail.com"><i class="fa-solid fa-envelope"></i> Send Email</a>
+            <div class="menu-divider"></div>
+            <a href="javascript:void(0)" onclick="toggleParticleTheme()"><i class="fa-solid fa-wand-magic-sparkles"></i> Toggle Ambient FX</a>
+          </div>
+        </div>
+
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Navigation Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section id="hero" class="hero-section">
+    <div class="hero-container">
+      <div class="hero-content fade-in-up">
+        <div class="status-badge">
+          <span class="pulse-dot"></span>
+          <span>Currently Working in DevOps &bull; Final Year B.Tech CSE</span>
+        </div>
+        
+        <div class="hero-greeting">Hi, I'm</div>
+        <h1 class="hero-title">
+          <span class="gradient-text">Shivangi Maurya</span>
+        </h1>
+
+        <div class="hero-roles">
+          <span class="role-pill">DevOps Trainee</span>
+          <span class="role-pill">Aspiring DevOps Engineer</span>
+          <span class="role-pill">Java & Full-Stack Developer</span>
+        </div>
+
+        <p class="hero-description">
+          Learning and building with DevOps tools & technologies to automate, deploy and monitor scalable applications. Passionate about cloud infrastructure, containers, CI/CD, Java, Spring Boot, Python, Power BI, and reliable deployments.
+        </p>
+
+        <div class="hero-cta">
+          <a href="#projects" class="btn btn-primary">
+            View My Work <i class="fa-solid fa-arrow-right"></i>
+          </a>
+          <button class="btn btn-secondary" onclick="openResumeModal()">
+            <i class="fa-solid fa-download"></i> Download Resume
+          </button>
+          <a href="#contact" class="btn btn-outline">
+            <i class="fa-solid fa-paper-plane"></i> Contact Me
+          </a>
+        </div>
+
+        <div class="hero-socials-row">
+          <span class="social-label">Find me on</span>
+          <div class="social-icons-group">
+            <a href="https://github.com/mauryashivi199-ui" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
+            <a href="https://linkedin.com/in/shivangi-27s" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="mailto:mauryashivi199@gmail.com" title="Email"><i class="fa-solid fa-envelope"></i></a>
+          </div>
+        </div>
+
+        <div class="hero-tech-pills">
+          <span class="pill"><i class="fa-brands fa-linux"></i> Linux</span>
+          <span class="pill"><i class="fa-brands fa-aws"></i> AWS EC2</span>
+          <span class="pill"><i class="fa-brands fa-docker"></i> Docker</span>
+          <span class="pill"><i class="fa-solid fa-dharmachakra"></i> Kubernetes</span>
+          <span class="pill"><i class="fa-solid fa-bolt"></i> CI/CD</span>
+          <span class="pill"><i class="fa-brands fa-java"></i> Java</span>
+          <span class="pill"><i class="fa-solid fa-chart-pie"></i> Power BI</span>
+        </div>
+      </div>
+
+      <!-- HERO RIGHT 3D HOLOGRAM DEVOPS TERMINAL GRAPHIC -->
+      <div class="hero-graphic-wrapper fade-in-up delay-200">
+        <div class="cyber-window-card">
+          <div class="window-header">
+            <div class="window-dots">
+              <span class="dot red"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
+            </div>
+            <div class="window-title">_devops@portfolio:~</div>
+            <div class="window-status"><span class="live-pulse"></span> LIVE</div>
+          </div>
+
+          <div class="window-body">
+            <img src="devops_hologram_globe.jpg" alt="3D Holographic DevOps Globe Animation" class="hologram-img">
+            
+            <!-- FLOATING BADGES INSIDE GRAPHIC -->
+            <div class="holo-badge code-badge">
+              <span class="badge-icon"><i class="fa-solid fa-code"></i></span>
+              <div>
+                <strong>CODE</strong>
+                <small>Build & Commit</small>
+              </div>
+            </div>
+
+            <div class="holo-badge monitor-badge">
+              <span class="badge-icon"><i class="fa-solid fa-infinity"></i></span>
+              <div>
+                <strong>MONITOR</strong>
+                <small>Observe & Improve</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT & BIOGRAPHY SECTION -->
+  <section id="about" class="about-section">
+    <div class="section-container">
+      <div class="section-header text-center reveal">
+        <span class="sub-heading"><i class="fa-solid fa-user-gear"></i> Background Profile</span>
+        <h2 class="section-title">About <span class="gradient-text">Me</span></h2>
+        <div class="heading-line"></div>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-bio-card glass-card reveal">
+          <h3><i class="fa-solid fa-laptop-code"></i> Engineering Profile</h3>
+          <p>
+            I am <strong>Shivangi Maurya</strong>, a <strong>Final Year B.Tech Computer Science & Engineering student</strong> at <strong>MGIMT Lucknow</strong> (affiliated to <strong>AKTU Lucknow</strong>), graduating in <strong>2027</strong>.
+          </p>
+          <p>
+            During my internship at <strong>mCarbon Tech Innovation</strong> (June 2026 – August 2026) under the <strong>DevOps Program</strong>, I built production-grade AI RAG chatbot systems, hardened Kubernetes security (QoS, Pod Security Standards, PodDisruptionBudgets), and engineered automated GitOps CI/CD pipelines (GitHub &rarr; Jenkins &rarr; Harbor &rarr; ArgoCD).
+          </p>
+          <p>
+            My technical repertoire includes <strong>Java, Spring Boot, Python, Flask, MySQL, SQLite, Power BI Data Analytics, Node.js, and Cloud DevOps tools</strong>.
+          </p>
+
+          <div class="stats-row">
+            <div class="stat-box">
+              <span class="stat-num">Final Year</span>
+              <span class="stat-label">B.Tech CSE Student</span>
+            </div>
+            <div class="stat-box">
+              <span class="stat-num">DevOps</span>
+              <span class="stat-label">Program Intern (Aug 2026)</span>
+            </div>
+            <div class="stat-box">
+              <span class="stat-num">2027</span>
+              <span class="stat-label">AKTU Passing Year</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="profile-display-card glass-card reveal text-center">
+          <div class="hd-profile-box">
+            <img src="shivangi_blazer_hd.jpg" alt="Shivangi Maurya Professional Black Blazer HD Profile">
+          </div>
+          <h3>Shivangi Maurya</h3>
+          <p class="role-subtitle">DevOps Engineer Intern &bull; Final Year B.Tech CSE</p>
+          <p class="location-tag"><i class="fa-solid fa-location-dot"></i> Lucknow, Uttar Pradesh, India</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS SECTION -->
+  <section id="skills" class="skills-section">
+    <div class="section-container">
+      <div class="section-header text-center reveal">
+        <span class="sub-heading"><i class="fa-solid fa-microchip"></i> Technical Capabilities</span>
+        <h2 class="section-title">Technical <span class="gradient-text">Skills</span></h2>
+        <div class="heading-line"></div>
+      </div>
+
+      <div class="skills-grid">
+        <div class="skill-category-card glass-card reveal">
+          <h3><i class="fa-solid fa-server"></i> DevOps & Cloud Infrastructure</h3>
+          <div class="skill-tags">
+            <span class="tag"><i class="fa-brands fa-linux"></i> Linux</span>
+            <span class="tag"><i class="fa-brands fa-docker"></i> Docker</span>
+            <span class="tag"><i class="fa-solid fa-dharmachakra"></i> Kubernetes</span>
+            <span class="tag"><i class="fa-brands fa-jenkins"></i> Jenkins</span>
+            <span class="tag"><i class="fa-brands fa-github"></i> GitHub Actions</span>
+            <span class="tag"><i class="fa-solid fa-cubes"></i> Helm</span>
+            <span class="tag"><i class="fa-solid fa-diagram-project"></i> ArgoCD</span>
+            <span class="tag"><i class="fa-solid fa-cloud"></i> Terraform</span>
+            <span class="tag"><i class="fa-brands fa-aws"></i> AWS EC2 / S3</span>
+          </div>
+        </div>
+
+        <div class="skill-category-card glass-card reveal">
+          <h3><i class="fa-solid fa-code"></i> Languages & Backend Frameworks</h3>
+          <div class="skill-tags">
+            <span class="tag"><i class="fa-brands fa-java"></i> Java</span>
+            <span class="tag"><i class="fa-solid fa-leaf"></i> Spring Boot</span>
+            <span class="tag"><i class="fa-brands fa-python"></i> Python</span>
+            <span class="tag"><i class="fa-solid fa-pepper-hot"></i> Flask</span>
+            <span class="tag"><i class="fa-solid fa-terminal"></i> Bash Scripting</span>
+            <span class="tag"><i class="fa-brands fa-node-js"></i> Node.js</span>
+            <span class="tag"><i class="fa-brands fa-js"></i> JavaScript (ES6+)</span>
+            <span class="tag"><i class="fa-brands fa-react"></i> React.js</span>
+          </div>
+        </div>
+
+        <div class="skill-category-card glass-card reveal">
+          <h3><i class="fa-solid fa-database"></i> Databases & Analytics Tools</h3>
+          <div class="skill-tags">
+            <span class="tag"><i class="fa-solid fa-chart-pie"></i> Power BI</span>
+            <span class="tag"><i class="fa-solid fa-database"></i> MySQL</span>
+            <span class="tag"><i class="fa-solid fa-database"></i> SQLite</span>
+            <span class="tag"><i class="fa-solid fa-leaf"></i> MongoDB</span>
+            <span class="tag"><i class="fa-solid fa-vector-square"></i> ChromaDB (Vector DB)</span>
+            <span class="tag"><i class="fa-solid fa-code-branch"></i> Git / GitHub</span>
+            <span class="tag"><i class="fa-solid fa-paper-plane"></i> Postman</span>
+            <span class="tag"><i class="fa-solid fa-microchip"></i> VS Code</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS SECTION (WITH REAL VISUAL PREVIEW MOCKUPS) -->
+  <section id="projects" class="projects-section">
+    <div class="section-container">
+      <div class="section-header text-center reveal">
+        <span class="sub-heading"><i class="fa-solid fa-rocket"></i> Selected Work</span>
+        <h2 class="section-title">My <span class="gradient-text">Projects</span></h2>
+        <div class="heading-line"></div>
+      </div>
+
+      <!-- CATEGORY SUBTITLE 1 -->
+      <div class="project-category-title reveal">
+        <span class="category-dash">—</span> DEVOPS & LIVE AI PROJECTS
+      </div>
+
+      <div class="projects-grid mb-5">
+        <!-- PROJECT 1: AI RAG CHAT SYSTEM (LIVE) -->
+        <div class="project-card glass-card reveal">
+          <div class="project-preview-header">
+            <span class="project-type-pill">LIVE PROJECT</span>
+            <img src="project_rag_preview.jpg" alt="AI RAG Chat System UI Preview" class="project-preview-img">
+          </div>
+
+          <div class="project-body">
+            <h3 class="project-title">AI RAG Chat System</h3>
+            <p class="project-desc">
+              Production-grade multi-user RAG chatbot built with authentication, profile settings, and ChatGPT-style UI. Integrated ChromaDB vector store, sentence-transformer embeddings, and OpenRouter API for context-aware live web search.
+            </p>
+
+            <div class="project-tech">
+              <span>Python</span>
+              <span>Flask</span>
+              <span>ChromaDB</span>
+              <span>Sentence-Transformers</span>
+              <span>OpenRouter API</span>
+            </div>
+
+            <div class="project-footer">
+              <button onclick="openProjectModal('rag')" class="btn btn-sm btn-primary">
+                <i class="fa-solid fa-globe"></i> Live System Details
+              </button>
+              <span class="dev-badge"><span class="live-dot"></span> LIVE</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- PROJECT 2: EMPLOYEE MANAGEMENT SYSTEM (EMS) -->
+        <div class="project-card glass-card reveal">
+          <div class="project-preview-header">
+            <span class="project-type-pill">DEVOPS PROJECT</span>
+            <img src="project_ems_preview.jpg" alt="Employee Management System EMS Dashboard Preview" class="project-preview-img">
+          </div>
+
+          <div class="project-body">
+            <h3 class="project-title">Employee Management System (EMS)</h3>
+            <p class="project-desc">
+              Full-stack EMS built using Java, Spring Boot, Flask, MySQL, and SQLite. Deployed on Kubernetes with GPS-geofenced attendance, real-time chat, Chart.js analytics, and automated GitOps CI/CD pipeline (GitHub &rarr; Jenkins &rarr; Harbor &rarr; ArgoCD).
+            </p>
+
+            <div class="project-tech">
+              <span>Java</span>
+              <span>Spring Boot</span>
+              <span>Flask</span>
+              <span>MySQL / SQLite</span>
+              <span>Kubernetes</span>
+              <span>ArgoCD</span>
+            </div>
+
+            <div class="project-footer">
+              <a href="https://github.com/mauryashivi199-ui/employee-management-system.git" target="_blank" class="github-btn">
+                <i class="fa-brands fa-github"></i> GitHub
+              </a>
+              <span class="dev-badge"><span class="blue-dot"></span> DEPLOYED</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CATEGORY SUBTITLE 2 -->
+      <div class="project-category-title reveal">
+        <span class="category-dash">—</span> WEB & SOFTWARE DEVELOPMENT PROJECTS
+      </div>
+
+      <div class="projects-grid">
+        <!-- PROJECT 3: SAFEHER - WOMEN SAFETY WEB APP -->
+        <div class="project-card glass-card reveal">
+          <div class="project-preview-header">
+            <span class="project-type-pill">WEB PROJECT</span>
+            <img src="project_safeher_preview.jpg" alt="SafeHer Women Safety Web App Mobile Preview" class="project-preview-img">
+          </div>
+
+          <div class="project-body">
+            <h3 class="project-title">SafeHer — Women Safety Web App</h3>
+            <p class="project-desc">
+              Emergency SOS alert system for women's safety featuring real-time location sharing, nearby emergency help locator, and rapid response interface. Built with a responsive vanilla frontend and Node.js REST API backend.
+            </p>
+
+            <div class="project-tech">
+              <span>HTML5</span>
+              <span>CSS3</span>
+              <span>JavaScript</span>
+              <span>Node.js</span>
+              <span>REST API</span>
+            </div>
+
+            <div class="project-footer">
+              <a href="https://github.com/mauryashivi199-ui/SafeHer-.git" target="_blank" class="github-btn">
+                <i class="fa-brands fa-github"></i> GitHub
+              </a>
+              <span class="dev-badge"><span class="green-dot"></span> COMPLETED</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- PROJECT 4: INTERACTIVE GAME -->
+        <div class="project-card glass-card reveal">
+          <div class="project-preview-header">
+            <span class="project-type-pill">GAME PROJECT</span>
+            <img src="project_game_preview.jpg" alt="Interactive Web Mini Game UI Preview" class="project-preview-img">
+          </div>
+
+          <div class="project-body">
+            <h3 class="project-title">Interactive Web Game</h3>
+            <p class="project-desc">
+              Engaging browser-based mini-game featuring custom animation loops, user controls, score tracking, responsive UI mechanics, and sound effects designed for high playability.
+            </p>
+
+            <div class="project-tech">
+              <span>JavaScript (ES6+)</span>
+              <span>HTML5 Canvas</span>
+              <span>CSS Animations</span>
+              <span>Audio API</span>
+            </div>
+
+            <div class="project-footer">
+              <a href="https://github.com/mauryashivi199-ui/game.git" target="_blank" class="github-btn">
+                <i class="fa-brands fa-github"></i> GitHub
+              </a>
+              <span class="dev-badge"><span class="gold-dot"></span> COMPLETED</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- EXPERIENCE TIMELINE SECTION -->
+  <section id="experience" class="experience-section">
+    <div class="section-container">
+      <div class="section-header text-center reveal">
+        <span class="sub-heading"><i class="fa-solid fa-briefcase"></i> Work & Journey</span>
+        <h2 class="section-title">My <span class="gradient-text">Journey</span></h2>
+        <div class="heading-line"></div>
+      </div>
+
+      <div class="timeline-wrapper">
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"><i class="fa-solid fa-dharmachakra"></i></div>
+          <div class="timeline-content glass-card">
+            <div class="timeline-header">
+              <div>
+                <h3 class="role-title">DevOps Engineer Intern</h3>
+                <h4 class="company-name"><i class="fa-solid fa-building"></i> mCarbon Tech Innovation</h4>
+              </div>
+              <div class="timeline-meta">
+                <span class="badge-program">DevOps Program</span>
+                <span class="timeline-date"><i class="fa-regular fa-calendar-days"></i> June 2026 – August 2026</span>
+                <span class="timeline-location"><i class="fa-solid fa-location-dot"></i> Noida, UP</span>
+              </div>
+            </div>
+
+            <ul class="timeline-bullets">
+              <li>
+                <i class="fa-solid fa-circle-check"></i> Built a production-grade multi-user <strong>AI RAG Chat System</strong> from scratch using Python/Flask, ChromaDB, sentence-transformers, OpenRouter API, and a ChatGPT-style UI with live web search integration.
+              </li>
+              <li>
+                <i class="fa-solid fa-circle-check"></i> Hardened Kubernetes security on full-stack Employee Management System (EMS) using Java, Spring Boot, Flask, MySQL, and SQLite &bull; Guaranteed QoS, Pod Security Standards, PodDisruptionBudgets, and init/sidecar containers.
+              </li>
+              <li>
+                <i class="fa-solid fa-circle-check"></i> Engineered end-to-end <strong>GitOps pipeline</strong> (GitHub &rarr; Jenkins &rarr; Harbor &rarr; ArgoCD) with Helm charts managing all Kubernetes workloads (Deployment, StatefulSet, DaemonSet, Job, CronJob).
+              </li>
+            </ul>
+
+            <div class="timeline-tags">
+              <span>Kubernetes</span>
+              <span>Docker</span>
+              <span>Helm</span>
+              <span>Jenkins</span>
+              <span>ArgoCD</span>
+              <span>Java & Spring Boot</span>
+              <span>MySQL & SQLite</span>
+              <span>Python RAG</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION SECTION -->
+  <section id="education" class="education-section">
+    <div class="section-container">
+      <div class="section-header text-center reveal">
+        <span class="sub-heading"><i class="fa-solid fa-graduation-cap"></i> Academic Credentials</span>
+        <h2 class="section-title">Education & <span class="gradient-text">Academic Status</span></h2>
+        <div class="heading-line"></div>
+      </div>
+
+      <div class="education-grid">
+        
+        <!-- B.TECH GRADUATION CARD -->
+        <div class="edu-card glass-card reveal">
+          <div class="edu-header">
+            <div class="edu-badge"><i class="fa-solid fa-user-graduate"></i> B.Tech CSE (Final Year)</div>
+            <span class="edu-year">2023 – 2027</span>
+          </div>
+
+          <h3 class="degree-title">B.Tech — Computer Science & Engineering</h3>
+          <h4 class="college-title"><i class="fa-solid fa-university"></i> MGIMT Lucknow</h4>
+          <p class="university-name">Affiliated to Dr. A.P.J. Abdul Kalam Technical University (AKTU Lucknow)</p>
+
+          <div class="edu-details">
+            <p><i class="fa-solid fa-circle-check"></i> <strong>Current Status:</strong> Final Year Student (Batch 2023–2027)</p>
+            <p><i class="fa-solid fa-book-open"></i> <strong>Core Coursework:</strong> Operating Systems, Computer Networks, DBMS, Data Structures & Algorithms, Java & Cloud Systems</p>
+            
+            <div class="aktu-result-box">
+              <i class="fa-solid fa-clock"></i> <span><strong>Academic Result Status:</strong> Pursuing Final Year (Degree & Result Expected in 2027)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 12th INTERMEDIATE MARKSHEET CARD -->
+        <div class="edu-card glass-card reveal">
+          <div class="edu-header">
+            <div class="edu-badge badge-12th"><i class="fa-solid fa-certificate"></i> Intermediate (12th)</div>
+            <span class="edu-year">Passed: 2023</span>
+          </div>
+
+          <h3 class="degree-title">UP Board (UPMSP) — 12th Standard</h3>
+          <h4 class="college-title"><i class="fa-solid fa-school"></i> M Islamia Girls Inter College Unchegaon Ayodhya</h4>
+          <p class="university-name">Stream: <strong>B-Science</strong> | Status: <strong>PASSED (1st Division)</strong></p>
+
+          <div class="result-summary">
+            <div class="score-pill">
+              <span class="score-val">UPMSP</span>
+              <span class="score-lbl">Board</span>
+            </div>
+            <div class="score-pill">
+              <span class="score-val">FIRST</span>
+              <span class="score-lbl">Division</span>
+            </div>
+            <div class="score-pill">
+              <span class="score-val">PASSED</span>
+              <span class="score-lbl">Result</span>
+            </div>
+          </div>
+
+          <button class="btn btn-sm btn-outline btn-block" onclick="toggleResultView('12th')">
+            <i class="fa-solid fa-lock"></i> Academic Record (View Locked / On Request)
+          </button>
+        </div>
+
+        <!-- 10th HIGH SCHOOL MARKSHEET CARD -->
+        <div class="edu-card glass-card reveal">
+          <div class="edu-header">
+            <div class="edu-badge badge-10th"><i class="fa-solid fa-award"></i> High School (10th)</div>
+            <span class="edu-year">Passed: 2021</span>
+          </div>
+
+          <h3 class="degree-title">UP Board (UPMSP) — 10th Standard</h3>
+          <h4 class="college-title"><i class="fa-solid fa-school"></i> M Islamia Girls Inter College Unchegaon Ayodhya</h4>
+          <p class="university-name">Exam Type: <strong>Regular</strong> | Status: <strong>PASSED</strong></p>
+
+          <div class="result-summary">
+            <div class="score-pill">
+              <span class="score-val">UPMSP</span>
+              <span class="score-lbl">Board</span>
+            </div>
+            <div class="score-pill">
+              <span class="score-val">6 Subjects</span>
+              <span class="score-lbl">Passed</span>
+            </div>
+            <div class="score-pill">
+              <span class="score-val">PASSED</span>
+              <span class="score-lbl">Result</span>
+            </div>
+          </div>
+
+          <button class="btn btn-sm btn-outline btn-block" onclick="toggleResultView('10th')">
+            <i class="fa-solid fa-lock"></i> Academic Record (View Locked / On Request)
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATES SHOWCASE SECTION -->
+  <section id="certificates" class="certificates-section">
+    <div class="section-container">
+      <div class="section-header text-center reveal">
+        <span class="sub-heading"><i class="fa-solid fa-ribbon"></i> Achievements & Certifications</span>
+        <h2 class="section-title">Certifications & <span class="gradient-text">Recognitions</span></h2>
+        <div class="heading-line"></div>
+      </div>
+
+      <div class="certificates-grid">
+        
+        <!-- CERTIFICATE 1: SOFTPRO INDIA & AKTU FULL STACK WORKSHOP (UPLOADED) -->
+        <div class="cert-card glass-card cert-featured reveal">
+          <div class="cert-img-header">
+            <img src="softpro_aktu_cert.jpeg" alt="Softpro India & AKTU Full Stack Workshop Certificate Shivangi Maurya" onclick="openCertImageModal('softpro_aktu_cert.jpeg', 'Full Stack Web Journey Workshop Certificate')">
+          </div>
+          <div class="cert-body">
+            <span class="cert-issuer"><i class="fa-solid fa-star"></i> Softpro India &bull; AKTU Lucknow</span>
+            <h3 class="cert-title">Design to Deploy – A Full Stack Web Journey</h3>
+            <p class="cert-desc">
+              Workshop Completion Certificate awarded to <strong>Shivangi Maurya</strong> (MGIMT Lucknow) for completing the hands-on <strong>Design to Deploy Full Stack Web Journey</strong> organized by Softpro India in collaboration with <strong>Dr. APJ Abdul Kalam Technical University (AKTU)</strong>.
+            </p>
+            <div class="cert-meta">
+              <span><i class="fa-regular fa-calendar"></i> November 20, 2025 &bull; Lucknow, UP</span>
+            </div>
+            <button class="btn btn-sm btn-primary btn-block" onclick="openCertImageModal('softpro_aktu_cert.jpeg', 'Design to Deploy Full Stack Workshop Certificate')">
+              <i class="fa-solid fa-expand"></i> View Full HD Certificate
+            </button>
+          </div>
+        </div>
+
+        <!-- CERTIFICATE 2: ITVEDANT POWER BI DATA ANALYTICS (UPLOADED) -->
+        <div class="cert-card glass-card cert-featured reveal">
+          <div class="cert-img-header">
+            <img src="itvedant_powerbi_cert.jpeg" alt="ITVedant Lucknow Power BI Data Analytics Award Photo Shivangi Maurya" onclick="openCertImageModal('itvedant_powerbi_cert.jpeg', 'ITVedant Lucknow Power BI Certification')">
+          </div>
+          <div class="cert-body">
+            <span class="cert-issuer"><i class="fa-solid fa-chart-pie"></i> ITVedant Lucknow &bull; Data Analytics</span>
+            <h3 class="cert-title">Power BI & Data Analytics Certification</h3>
+            <p class="cert-desc">
+              Certification & Award ceremony for successfully completing <strong>Power BI Data Analytics & Visualization Training</strong> at <strong>ITVedant Institute, Lucknow</strong>.
+            </p>
+            <div class="cert-meta">
+              <span><i class="fa-regular fa-calendar"></i> Verified Credential &bull; Lucknow, UP</span>
+            </div>
+            <button class="btn btn-sm btn-primary btn-block" onclick="openCertImageModal('itvedant_powerbi_cert.jpeg', 'ITVedant Power BI Data Analytics Certificate Photo')">
+              <i class="fa-solid fa-expand"></i> View Award Photo
+            </button>
+          </div>
+        </div>
+
+        <!-- CERTIFICATE 3: SPARK-O-FEST 1.0 (FEATURED) -->
+        <div class="cert-card glass-card reveal">
+          <div class="cert-img-header">
+            <img src="spark_fest_cert.jpeg" alt="Spark-O-Fest 1.0 Certificate Shivangi Maurya" onclick="openCertImageModal('spark_fest_cert.jpeg', 'Spark-O-Fest 1.0 Certificate')">
+          </div>
+          <div class="cert-body">
+            <span class="cert-issuer"><i class="fa-solid fa-star"></i> Incubation Cell 'SPARK' &bull; Saraswati Dental College</span>
+            <h3 class="cert-title">Spark-O-Fest 1.0 — Idea 2 Impact Certificate</h3>
+            <p class="cert-desc">
+              Awarded to <strong>Shivangi Maurya</strong> for participating at the <strong>National Conclave on Innovation & Entrepreneurship</strong> (14th - 15th March 2026) organized by SPARK Incubation Cell, Department of Medical Health & Family Welfare UP, & Invest UP.
+            </p>
+            <div class="cert-meta">
+              <span><i class="fa-regular fa-calendar"></i> March 14 - 15, 2026 &bull; Lucknow, UP</span>
+            </div>
+            <button class="btn btn-sm btn-outline btn-block" onclick="openCertImageModal('spark_fest_cert.jpeg', 'Spark-O-Fest 1.0 Certificate of Participation')">
+              <i class="fa-solid fa-expand"></i> View Full HD Certificate
+            </button>
+          </div>
+        </div>
+
+        <!-- CERTIFICATE 4: MCARBON DEVOPS PROGRAM (UPLOAD SLOT AS REQUESTED) -->
+        <div class="cert-card glass-card reveal">
+          <div class="cert-icon-box">
+            <i class="fa-solid fa-award"></i>
+          </div>
+          <div class="cert-body">
+            <span class="cert-issuer">mCarbon Tech Innovation &bull; DevOps Program</span>
+            <h3 class="cert-title">DevOps Trainee & Engineering Program</h3>
+            <p class="cert-desc">
+              Completed intensive DevOps program (June – August 2026). Hands-on mastery in Linux administration, Docker containerization, Kubernetes cluster hardening, Helm charts, Jenkins CI/CD, and ArgoCD GitOps pipelines.
+            </p>
+            <div class="cert-meta">
+              <span><i class="fa-regular fa-calendar"></i> June 2026 - August 2026</span>
+            </div>
+            <button class="btn btn-sm btn-outline btn-block" onclick="openCertificateModal('cert4', 'mCarbon DevOps Program Certificate', 'mCarbon Tech Innovation')">
+              <i class="fa-solid fa-upload"></i> View / Upload Certificate Photo
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section id="contact" class="contact-section">
+    <div class="section-container">
+      <div class="contact-two-column-grid">
+        
+        <!-- LEFT COLUMN: DEVOPS PROFILE CARD -->
+        <div class="contact-profile-card glass-card reveal">
+          <div class="devops-badge-banner">
+            <img src="shivangi_blazer_hd.jpg" alt="Shivangi Maurya Black Blazer Profile Picture" class="contact-profile-img">
+          </div>
+
+          <div class="contact-profile-body">
+            <h3 class="profile-name">Shivangi Maurya</h3>
+            <span class="profile-role-badge">DevOps Trainee</span>
+
+            <p class="profile-short-bio">
+              Passionate about DevOps, cloud infrastructure, containerization, Java, Spring Boot, Power BI and modern web technologies.
+            </p>
+
+            <div class="info-link-box">
+              <div class="info-icon"><i class="fa-regular fa-envelope"></i></div>
+              <div class="info-details">
+                <span class="lbl">EMAIL</span>
+                <a href="mailto:mauryashivi199@gmail.com" class="val">mauryashivi199@gmail.com <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+              </div>
+            </div>
+
+            <div class="info-link-box">
+              <div class="info-icon"><i class="fa-solid fa-location-dot"></i></div>
+              <div class="info-details">
+                <span class="lbl">LOCATION</span>
+                <span class="val">Lucknow, India</span>
+              </div>
+            </div>
+
+            <div class="contact-social-row">
+              <a href="https://github.com/mauryashivi199-ui" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
+              <a href="https://linkedin.com/in/shivangi-27s" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+              <a href="mailto:mauryashivi199@gmail.com" title="Email"><i class="fa-solid fa-envelope"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT COLUMN: START A CONVERSATION FORM -->
+        <div class="contact-form-card glass-card reveal">
+          <h2 class="form-main-heading">Start a conversation</h2>
+          <p class="form-sub-text">Fill out the form and send me a message directly.</p>
+
+          <form id="contactForm" onsubmit="handleFormSubmit(event)">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">YOUR NAME</label>
+                <input type="text" id="name" required placeholder="Enter your name">
+              </div>
+              <div class="form-group">
+                <label for="email">YOUR EMAIL</label>
+                <input type="email" id="email" required placeholder="you@example.com">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="subject">SUBJECT</label>
+              <input type="text" id="subject" required placeholder="Project / Opportunity / Query">
+            </div>
+
+            <div class="form-group">
+              <label for="message">MESSAGE</label>
+              <textarea id="message" rows="5" required placeholder="Write your message..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block send-message-btn">
+              Send Message <i class="fa-solid fa-paper-plane"></i>
+            </button>
+            <div id="formFeedback" class="form-feedback"></div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <a href="#hero" class="logo">
+          <span class="logo-icon"><i class="fa-solid fa-code"></i></span>
+          <span class="logo-text">Shivangi <span class="highlight">Maurya</span></span>
+        </a>
+        <p>Final Year B.Tech CSE @ MGIMT Lucknow (AKTU) &bull; DevOps Engineer</p>
+      </div>
+
+      <div class="footer-copy">
+        <p>&copy; 2026 Shivangi Maurya. All rights reserved.</p>
+      </div>
+
+      <div class="footer-back-to-top">
+        <a href="#hero" title="Scroll to top"><i class="fa-solid fa-arrow-up"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MODALS -->
+
+  <!-- RESUME MODAL -->
+  <div class="modal-overlay" id="resumeModal">
+    <div class="modal-card modal-lg">
+      <div class="modal-header">
+        <h3><i class="fa-solid fa-file-pdf"></i> Resume Preview — Shivangi Maurya</h3>
+        <button class="modal-close" onclick="closeModal('resumeModal')">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-actions-bar">
+          <a href="Shivangi_Maurya_Resume.pdf" download="Shivangi_Maurya_Resume.pdf" class="btn btn-sm btn-primary">
+            <i class="fa-solid fa-download"></i> Download Resume PDF
+          </a>
+          <span class="text-muted">Final Year B.Tech CSE | DevOps Trainee</span>
+        </div>
+
+        <div class="resume-formatted-box">
+          <div class="resume-header">
+            <h2>SHIVANGI MAURYA</h2>
+            <p><strong>DevOps Engineer Intern | Final Year B.Tech CSE</strong></p>
+            <p><i class="fa-solid fa-envelope"></i> mauryashivi199@gmail.com | Lucknow, UP</p>
+            <p><i class="fa-brands fa-github"></i> github.com/mauryashivi199-ui | <i class="fa-brands fa-linkedin"></i> linkedin.com/in/shivangi-27s</p>
+          </div>
+
+          <div class="resume-section">
+            <h4>CAREER OBJECTIVE</h4>
+            <p>Passionate Final Year B.Tech CSE student with hands-on experience in Linux, Docker, AWS EC2, Kubernetes, Jenkins, CI/CD pipelines, Java, Spring Boot, Python, Flask, MySQL, SQLite, and Power BI. Seeking a DevOps or Software Engineering role to build and automate scalable cloud infrastructure.</p>
+          </div>
+
+          <div class="resume-section">
+            <h4>INTERNSHIP EXPERIENCE</h4>
+            <p><strong>DevOps Engineer Intern — mCarbon Tech Innovation</strong> (DevOps Program | Noida | June 2026 – August 2026)</p>
+            <ul>
+              <li>Built a production-grade AI RAG chat system from scratch using Python/Flask, ChromaDB, sentence-transformers, and OpenRouter API with multi-user auth and ChatGPT-style UI.</li>
+              <li>Hardened Kubernetes security on a full-stack Employee Management System (EMS) using Java, Spring Boot, Flask, MySQL, and SQLite (Guaranteed QoS, Pod Security Standards, PodDisruptionBudgets, init/sidecar containers).</li>
+              <li>Set up GitOps pipeline (GitHub to Jenkins to Harbor to ArgoCD) with Helm charts.</li>
+            </ul>
+          </div>
+
+          <div class="resume-section">
+            <h4>TECHNICAL SKILLS</h4>
+            <p><strong>DevOps & Cloud:</strong> Linux, Docker, Kubernetes, Jenkins, GitHub Actions, Helm, ArgoCD, Terraform, AWS EC2/S3</p>
+            <p><strong>Languages & Backend:</strong> Java, Spring Boot, Python, Bash, Node.js, Flask, JavaScript (ES6+), HTML5/CSS3</p>
+            <p><strong>Databases & Analytics:</strong> Power BI Data Analytics, MySQL, SQLite, MongoDB, ChromaDB (Vector DB)</p>
+          </div>
+
+          <div class="resume-section">
+            <h4>EDUCATION</h4>
+            <p><strong>B.Tech — Computer Science & Engineering</strong> | MGIMT Lucknow (AKTU University)</p>
+            <p>Final Year Student | Passing Year 2027 | Coursework: Operating Systems, Networks, DBMS, Data Structures, Algorithms, Software Engineering.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CERTIFICATE IMAGE ENLARGE MODAL -->
+  <div class="modal-overlay" id="certImageModal">
+    <div class="modal-card modal-lg">
+      <div class="modal-header">
+        <h3 id="certImageModalTitle"><i class="fa-solid fa-certificate"></i> Certificate Image View</h3>
+        <button class="modal-close" onclick="closeModal('certImageModal')">&times;</button>
+      </div>
+      <div class="modal-body text-center">
+        <img src="" id="enlargedCertImage" alt="Certificate Image" style="max-width: 100%; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.8);">
+      </div>
+    </div>
+  </div>
+
+  <!-- CERTIFICATE FILE UPLOAD MODAL -->
+  <div class="modal-overlay" id="certificateModal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 id="certModalTitle"><i class="fa-solid fa-certificate"></i> Certificate Showcase</h3>
+        <button class="modal-close" onclick="closeModal('certificateModal')">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="cert-preview-box text-center">
+          <div id="certImageContainer" class="cert-img-holder">
+            <div class="cert-placeholder">
+              <i class="fa-solid fa-award cert-big-icon"></i>
+              <h4 id="certModalName">DevOps Certificate</h4>
+              <p id="certModalIssuer">mCarbon Tech Innovation</p>
+              <span class="badge-status">Verified Certificate Badge</span>
+            </div>
+          </div>
+
+          <div class="cert-upload-area">
+            <p><i class="fa-solid fa-cloud-arrow-up"></i> Upload / Change Certificate Photo (Local Preview)</p>
+            <input type="file" id="certFileInput" accept="image/*" onchange="handleCertUpload(event)">
+            <label for="certFileInput" class="btn btn-sm btn-secondary">
+              <i class="fa-solid fa-upload"></i> Select Image File
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROJECT MODAL -->
+  <div class="modal-overlay" id="projectModal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3><i class="fa-solid fa-rocket"></i> Live AI RAG Chat System</h3>
+        <button class="modal-close" onclick="closeModal('projectModal')">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p><strong>System Highlights:</strong></p>
+        <ul>
+          <li>Production-grade multi-user AI RAG chatbot architecture.</li>
+          <li>Flask web backend with ChromaDB vector store and sentence-transformer embeddings.</li>
+          <li>Live Web Search capability integrated via OpenRouter API.</li>
+          <li>ChatGPT-style dark glass UI with chat history, session state, and secure login.</li>
+        </ul>
+        <div class="modal-actions mt-3">
+          <a href="https://github.com/mauryashivi199-ui" target="_blank" class="btn btn-primary btn-block">
+            <i class="fa-brands fa-github"></i> Visit GitHub Profile for Repos
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
