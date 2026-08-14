@@ -93,6 +93,7 @@ a {
 
 .text-center { text-align: center; }
 .mt-3 { margin-top: 1rem; }
+.mb-3 { margin-bottom: 1rem; }
 .mb-5 { margin-bottom: 2.5rem; }
 
 /* REUSABLE GLASS CARD */
@@ -692,19 +693,20 @@ section {
   border: 4px solid var(--primary-cyan);
   box-shadow: 0 0 25px rgba(0, 240, 255, 0.35);
   position: relative;
+  background: #090e1a;
 }
 
 .hd-profile-box img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 10%;
-  transform: scale(1.35);
+  object-position: center 6%;
+  transform: scale(1.65);
   transition: transform 0.4s ease;
 }
 
 .hd-profile-box:hover img {
-  transform: scale(1.42);
+  transform: scale(1.75);
 }
 
 .profile-display-card h3 {
@@ -1169,10 +1171,11 @@ section {
   height: 150px;
   border-radius: 50%;
   object-fit: cover;
-  object-position: center 10%;
-  transform: scale(1.35);
+  object-position: center 6%;
+  transform: scale(1.65);
   border: 3px solid var(--primary-cyan);
   box-shadow: 0 0 20px rgba(0, 240, 255, 0.4);
+  transition: transform 0.4s ease;
 }
 
 .contact-profile-body {
