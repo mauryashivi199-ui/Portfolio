@@ -1,7 +1,7 @@
 /* ==========================================================================
    SHIVANGI MAURYA PORTFOLIO - INTERACTIVE SCRIPT
    Features: 3-Dot Dropdown, Typewriter, Particle Canvas, Modals, Locked Result View,
-   Certificate Showcase, Local Storage Photo Preview, Form Validation
+   Certificate Showcase, Local Storage Photo Preview, Real Email Form Handler
    ========================================================================== */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -348,15 +348,65 @@ function handleCertUpload(event) {
 }
 
 /* --------------------------------------------------------------------------
-   8. CONTACT FORM SUBMISSION
+   8. CONTACT FORM SUBMISSION (REAL EMAIL DELIVERY TO mauryashivi199@gmail.com)
    -------------------------------------------------------------------------- */
-function handleFormSubmit(e) {
+async function handleFormSubmit(e) {
   e.preventDefault();
-  const name = document.getElementById("name").value;
+  const nameInput = document.getElementById("name");
+  const emailInput = document.getElementById("email");
+  const subjectInput = document.getElementById("subject");
+  const messageInput = document.getElementById("message");
   const feedback = document.getElementById("formFeedback");
+  const submitBtn = e.target.querySelector("button[type='submit']");
 
-  feedback.className = "form-feedback success";
-  feedback.innerHTML = `<i class="fa-solid fa-circle-check"></i> Thank you, <strong>${name}</strong>! Your message has been sent successfully. Shivangi will contact you via email soon.`;
+  if (!nameInput || !emailInput || !messageInput) return;
 
-  document.getElementById("contactForm").reset();
+  const name = nameInput.value.trim();
+  const email = emailInput.value.trim();
+  const subject = subjectInput ? subjectInput.value.trim() : "New Portfolio Contact Message";
+  const message = messageInput.value.trim();
+
+  submitBtn.disabled = true;
+  const originalBtnText = submitBtn.innerHTML;
+  submitBtn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> Sending Message...`;
+
+  feedback.className = "form-feedback";
+  feedback.innerHTML = `<span style="color: var(--primary-cyan);"><i class="fa-solid fa-paper-plane fa-bounce"></i> Delivering message to Shivangi's Gmail...</span>`;
+
+  try {
+    const response = await fetch("https://formsubmit.co/ajax/mauryashivi199@gmail.com", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      },
+      body: JSON.stringify({
+        name: name,
+        email: email,
+        subject: subject,
+        message: message,
+        _subject: `Portfolio Inquiry from ${name}: ${subject}`,
+        _template: "table",
+        _captcha: "false"
+      })
+    });
+
+    const result = await response.json();
+
+    if (response.ok || result.success === "true" || result.success === true) {
+      feedback.className = "form-feedback success";
+      feedback.innerHTML = `<i class="fa-solid fa-circle-check"></i> Thank you, <strong>${name}</strong>! Your message has been sent directly to <strong>mauryashivi199@gmail.com</strong>. Shivangi will contact you soon!`;
+      document.getElementById("contactForm").reset();
+    } else {
+      throw new Error(result.message || "Failed to send email");
+    }
+  } catch (error) {
+    console.error("Form error:", error);
+    const mailtoUrl = `mailto:mauryashivi199@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent("Name: " + name + "\nEmail: " + email + "\n\nMessage:\n" + message)}`;
+    feedback.className = "form-feedback success";
+    feedback.innerHTML = `<i class="fa-solid fa-circle-check"></i> <a href="${mailtoUrl}" style="color: var(--primary-cyan); text-decoration: underline; font-weight: bold;">Click here to send email directly via your mail client</a>.`;
+  } finally {
+    submitBtn.disabled = false;
+    submitBtn.innerHTML = originalBtnText;
+  }
 }
